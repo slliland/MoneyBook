@@ -1,38 +1,68 @@
-第一次运行首先安装依赖，只需要运行一次
+# Money Book
+
+Money Book is a web-based financial management tool designed for tracking expenses, managing budgets, and providing insights into personal finance. The project is built for macOS Sierra 10.12.6 or later, and supports Chrome 68 or higher. Other operating systems and browsers are yet to be tested.
+
+## Prerequisites
+
+Before you start, ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (v12 or higher)
+- [npm](https://www.npmjs.com/) (v6 or higher)
+
+## Installation
+
+To install project dependencies, run the following command in your terminal. This step is only required once:
 
 ```bash
-npm insall
+npm install
 ```
 
-然后本地启动项目
+## Running the Project Locally
+
+To start the development server and run the project locally, use the following command:
 
 ```bash
 npm run dev
 ```
 
-### 测试
+This will launch the development environment, allowing you to preview and work on the project on your local machine.
+
+## Testing
+
+To execute the test suite for the project, run:
 
 ```bash
 npm test
 ```
 
+This will run all the unit and integration tests to ensure the application is functioning as expected.
 
-### 运行环境
+## Production Build and Deployment
 
-本项目在macOS Sierra 10.12.6 或更高版本 以及 Chrome 68或更高版本下运行，其他操作系统和浏览器尚未测试。
+To prepare the project for deployment, first create a production build:
 
-### 打包以及上线
-
-先将程序为生产环境打包
 ```bash
 npm build
 ```
 
+Once the build process is complete, you can start the application using:
+
 ```bash
 npm start
 ```
-该命令用于在云服务器里直接运行，本地可以用于测试
+
+This command is typically used for testing in a production-like environment on a local machine or cloud server.
+
+For deploying the application directly to the cloud, use the following command:
 
 ```bash
 lean deploy
 ```
+
+This will push the application to your cloud environment for public access.
+
+## Supported Environments
+
+- **macOS**: Tested on macOS Sierra 10.12.6 or later.
+- **Browser**: Supported on Chrome 68 or higher.
+
+Other operating systems and browsers have not yet been tested.

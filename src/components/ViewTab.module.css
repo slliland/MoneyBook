@@ -1,0 +1,12 @@
+.nav-link {
+    color: #000; /* Default text color */
+  }
+  
+  .nav-link.active-list {
+    color: #007bff; /* Blue for List Mode */
+  }
+  
+  .nav-link.active-chart {
+    color: #61045F; /* Purple for Chart Mode */
+  }
+  
