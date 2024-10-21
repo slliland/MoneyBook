@@ -59,11 +59,13 @@ class MonthPicker extends React.Component {
                 <h4>Select Month</h4>
                 <div className="btn-group" style={{ display: 'block' }}>
                     <button
-                        className="btn btn-primary dropdown-toggle"
-                        onClick={this.toggleDropdown}
+                    className="btn btn-primary dropdown-toggle"
+                    onClick={this.toggleDropdown}
+                    style={{ fontSize: '1rem', padding: '5px 30px' }}  // Add inline styles for bigger size
                     >
-                        {`${selectedYear} - ${padLeft(selectedMonth)}`}
+                    {`${selectedYear} - ${padLeft(selectedMonth)}`}
                     </button>
+
                     {isOpen && (
                         <div className="dropdown-menu" style={{ display: 'block' }}>
                             <div className="row">

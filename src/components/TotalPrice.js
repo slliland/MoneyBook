@@ -10,7 +10,7 @@ const TotalPrice = ({ income, outcome }) => (
             className="rounded-circle"
             fontSize="30px"
             color="#28a745"
-            icon="ios-arrow-down"
+            icon="md-arrow-down"
         />
         </div>
         <div className="col font-weight-bold">

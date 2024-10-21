@@ -1,72 +1,104 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
+/* Ensure the header takes up full width and height */
 .App-header {
-  background-color: rgb(51,51,51);
-  min-width: 100vh;
+  background-color: rgb(51, 51, 51); /* You can keep the background as fallback in case image fails to load */
+  width: 100%;  /* Make sure the header spans the full width of the viewport */
+  height: 100vh; /* Make the header fill the entire height of the viewport */
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  overflow: hidden; /* Ensure no overflow occurs */
 }
 
-.App-header .banner {
-  min-width: 100vh;
+/* Flexbox container for the banner and button */
+.banner-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+/* Make the banner image responsive */
+.banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute; /* Make sure the banner covers the entire container */
+  top: 0;
+  left: 0;
+  z-index: 0; /* Ensure that the image is displayed behind the button and other content */
 }
 
-.content-area {
-  background: #f0f0f0;
+/* Style the scroll-down button */
+.scroll-down-btn {
+  position: absolute;
+  bottom: 10%;  /* Keep it 10% above the bottom of the banner, responsive to the screen height */
+  left: 50%;    /* Horizontally centered */
+  transform: translateX(-50%); /* Center the button horizontally */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1; /* Ensure it stays above the banner image */
 }
 
-/* Ensure the button takes full width but remains centered */
-.content-area .create-btn {
-  width: 1000px;               /* Set the button width to 100% of the parent container */
-  max-width: 500px;           /* Optionally, you can set a max-width for larger screens */
-  text-align: center;         /* Center the text inside the button */
-  margin: 10px 0;             /* Add some vertical margin for spacing */
+.scroll-down-btn:hover {
+  color: rgb(51, 51, 51); /* Optional hover effect */
 }
 
-.content-area .create-btn button {
-  width: 100%;                /* Make the actual button fill its container */
-  padding: 10px 20px;         /* Adjust padding to make the button look good */
-  background-color: #007bff;  /* Add background color for styling */
-  color: white;               /* Set text color */
-  border: none;               /* Remove default border */
-  border-radius: 4px;         /* Optional: add some border-radius */
-  cursor: pointer;            /* Change cursor to pointer for better UX */
+/* New section to handle the layout below the header */
+
+/* Flexbox container for MonthPicker and TotalPrice */
+.row-with-background {
+  background-color: rgb(51, 51, 51); /* Set the background color */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px; /* Add some padding */
+  width: 100%; /* Make sure it spans full width */
+  box-sizing: border-box; /* Ensure padding doesn't overflow */
 }
 
-.content-area .create-btn button:hover {
-  background-color: #0056b3;  /* Change background on hover */
+/* Style for MonthPicker and TotalPrice */
+.row-with-background .col {
+  flex: 1; /* Make sure each item takes up equal space */
+  margin: 10px;
+  color: white; /* Ensure text inside these elements remains readable */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Add some responsiveness */
+@media (max-width: 768px) {
+  .row-with-background {
+    flex-direction: column; /* Stack them on smaller screens */
   }
-  to {
-    transform: rotate(360deg);
+
+  .row-with-background .col {
+    margin-bottom: 20px; /* Add spacing when stacked */
+  }
+}
+
+/* Style content-area so it remains flexible */
+.content-area {
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px; /* Limit the max width */
+  margin: 0 auto; /* Center the content */
+  background-color: #f0f0f0; /* Background for the content area */
+  box-sizing: border-box;
+}
+
+.create-btn {
+  margin: 20px 0;
+  display: block;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .content-area {
+    padding: 10px;
   }
 }
