@@ -14,8 +14,8 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: rgb(51,51,51);
+  min-width: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,8 +24,42 @@
   color: white;
 }
 
+.App-header .banner {
+  min-width: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .App-link {
   color: #61dafb;
+}
+
+.content-area {
+  background: #f0f0f0;
+}
+
+/* Ensure the button takes full width but remains centered */
+.content-area .create-btn {
+  width: 1000px;               /* Set the button width to 100% of the parent container */
+  max-width: 500px;           /* Optionally, you can set a max-width for larger screens */
+  text-align: center;         /* Center the text inside the button */
+  margin: 10px 0;             /* Add some vertical margin for spacing */
+}
+
+.content-area .create-btn button {
+  width: 100%;                /* Make the actual button fill its container */
+  padding: 10px 20px;         /* Adjust padding to make the button look good */
+  background-color: #007bff;  /* Add background color for styling */
+  color: white;               /* Set text color */
+  border: none;               /* Remove default border */
+  border-radius: 4px;         /* Optional: add some border-radius */
+  cursor: pointer;            /* Change cursor to pointer for better UX */
+}
+
+.content-area .create-btn button:hover {
+  background-color: #0056b3;  /* Change background on hover */
 }
 
 @keyframes App-logo-spin {
