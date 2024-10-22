@@ -1,25 +1,25 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import PriceList from './components/PriceList';
-import ViewTab from './components/ViewTab';
-import { LIST_VIEW, CHART_VIEW } from './utility';
-import TotalPrice from './components/TotalPrice';
-import MonthPicker from './components/MonthPicker';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './containers/Home';
+import Create from './containers/Create';
 
-
-
-function App() {
-  return (
-    <div className="App">
-      <Home />
-      {/* <MonthPicker 
-        year={2024}
-        month={5}
-        onChange={(year, month) => { console.log(year, month) }}
-      /> */}
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <Router>
+        <div className="App">
+            <Routes>
+              <Route path="/" exact element={<Home />} />
+              <Route path="/create" element={<Create />} />
+              <Route path="/edit/:id" element={<Create />} />
+            </Routes>
+          
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;
