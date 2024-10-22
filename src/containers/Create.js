@@ -8,6 +8,7 @@ import PriceForm from "../components/PriceForm";
 import { testCategories } from '../testData';  // Import the JSON file
 import { Tabs, Tab } from '../components/Tabs';
 import { AppContext } from '../App';
+import WithContext from '../WithContext';
 
 class Create extends React.Component {
   constructor(props) {
@@ -29,16 +30,12 @@ class Create extends React.Component {
   }
 
   render() {
+    const { data } = this.props;
     const { categories, type, selectedCategoryId } = this.state;
     // Filter categories by income or outcome based on the selected tab
     const filteredCategories = Object.values(categories).filter(cat => cat.type === type);
     
     return (
-      <AppContext.Consumer>
-        {
-          ({ state }) => {
-            console.log(state);
-            return (
       <div className="create-page container mt-5 py-4 px-3 rounded">
         <h2 className="text-center mb-4">Create a New Record</h2>
         <Tabs activeIndex={0} onTabChange={this.handleTabChange}>
@@ -56,11 +53,7 @@ class Create extends React.Component {
         <PriceForm onFormSubmit={() => {}} onCancelSubmit={() => {}} />
       </div>
     );
-          }
-        }
-      </AppContext.Consumer>
-    );
   }
 }
 
-export default Create;
+export default WithContext(Create);

@@ -31,12 +31,6 @@ export const isValidDate = dateStr => {
 }
 
 export const flatternArr = arr => {
-    // Ensure arr is an array, fallback to an empty array if not
-    if (!Array.isArray(arr)) {
-        console.error("Expected an array, but got:", typeof arr, arr);
-        return {};
-    }
-
     // Use the reduce method to convert the array to an object
     return arr.reduce((map, item) => {
         map[item.id] = item;
