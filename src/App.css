@@ -55,6 +55,7 @@
 /* Flexbox container for MonthPicker and TotalPrice */
 .row-with-background {
   background-color: rgb(51, 51, 51); /* Set the background color */
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;

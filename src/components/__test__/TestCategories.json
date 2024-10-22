@@ -1,0 +1,75 @@
+{
+    "1": {
+      "id": "1",
+      "name": "Salary",
+      "type": "income",
+      "iconName": "ios-cash"
+    },
+    "2": {
+      "id": "2",
+      "name": "Groceries",
+      "type": "outcome",
+      "iconName": "ios-basket"
+    },
+    "3": {
+      "id": "3",
+      "name": "Rent",
+      "type": "outcome",
+      "iconName": "ios-home"
+    },
+    "4": {
+      "id": "4",
+      "name": "Investment",
+      "type": "income",
+      "iconName": "ios-trending-up"
+    },
+    "5": {
+      "id": "5",
+      "name": "Transport",
+      "type": "outcome",
+      "iconName": "ios-car"
+    },
+    "6": {
+      "id": "6",
+      "name": "Dining Out",
+      "type": "outcome",
+      "iconName": "ios-restaurant"
+    },
+    "7": {
+      "id": "7",
+      "name": "Freelance",
+      "type": "income",
+      "iconName": "ios-laptop"
+    },
+    "8": {
+      "id": "8",
+      "name": "Health",
+      "type": "outcome",
+      "iconName": "ios-medkit"
+    },
+    "9": {
+      "id": "9",
+      "name": "Bonuses",
+      "type": "income",
+      "iconName": "ios-heart"
+    },
+    "10": {
+      "id": "10",
+      "name": "Entertainment",
+      "type": "outcome",
+      "iconName": "ios-film"
+    },
+    "11": {
+      "id": "11",
+      "name": "Electricity Bill",
+      "type": "outcome",
+      "iconName": "ios-flash"
+    },
+    "12": {
+      "id": "12",
+      "name": "Savings",
+      "type": "income",
+      "iconName": "ios-list"
+    }
+  }
+  

@@ -1,0 +1,95 @@
+/* Create page layout */
+.create-page {
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 8px;
+  }
+  
+  /* Styling for tabs */
+  .nav-tabs {
+    border-bottom: 2px solid #007bff;
+  }
+  
+  .nav-tabs .nav-link {
+    color: #555;
+    font-weight: 500;
+  }
+  
+  .nav-tabs .nav-link.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .nav-tabs .nav-link:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+  
+  /* Styling for category select */
+  .category-select-component .category-item {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .category-select-component .category-item.active {
+    border: 2px solid #007bff;
+    border-radius: 8px;
+  }
+  
+  .category-select-component .category-item:hover {
+    cursor: pointer;
+  }
+  
+  .category-select-component .category-item p {
+    margin-top: 10px;
+    color: #555;
+    font-weight: 500;
+  }
+  
+  .category-select-component .category-item.active p {
+    color: #007bff;
+  }
+  
+  /* Styling for form inputs */
+  .form-control {
+    border: 2px solid #ced4da;
+    border-radius: 5px;
+    box-shadow: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-control:focus {
+    border-color: #007bff;
+    box-shadow: none;
+  }
+  
+  /* Submit and Cancel button styles */
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #565e64;
+    border-color: #565e64;
+  }
+  
+  /* Add spacing to buttons */
+  .btn {
+    margin-right: 10px;
+  }
+  
