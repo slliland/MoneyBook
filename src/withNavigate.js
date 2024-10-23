@@ -1,11 +1,12 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
-// This HOC wraps class components and passes the navigate function
-const withNavigate = (Component) => {
-  return (props) => {
-    const navigate = useNavigate();
-    return <Component {...props} navigate={navigate} />;
+// HOC to add navigation and params to class component
+function withNavigate(Component) {
+  return function WithNavigateProps(props) {
+    let navigate = useNavigate();
+    let params = useParams();
+    return <Component {...props} navigate={navigate} params={params} />;
   };
-};
+}
 
 export default withNavigate;

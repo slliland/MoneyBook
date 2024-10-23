@@ -81,7 +81,7 @@ export const testCategories = {
         "id": "14",
         "name": "Gifts",
         "type": "income",
-        "iconName": "ios-gift"
+        "iconName": "ios-heart"
     },
     "15": {
         "id": "15",
@@ -105,7 +105,7 @@ export const testCategories = {
         "id": "18",
         "name": "Savings Interest",
         "type": "income",
-        "iconName": "ios-piggy"
+        "iconName": "ios-flag"
     },
     "19": {
         "id": "19",
@@ -177,5 +177,40 @@ export const testItems = [
         "price": 1000,
         "date": "2024-05-02",
         "cid": 6
+    },
+    {
+        "id": 9,
+        "title": "Freelance Work",
+        "price": 1500,
+        "date": "2024-04-15",
+        "cid": 13
+    },
+    {
+        "id": 10,
+        "title": "Salary for March",
+        "price": 4000,
+        "date": "2024-03-31",
+        "cid": 10
+    },
+    {
+        "id": 11,
+        "title": "Bonus for Project Completion",
+        "price": 800,
+        "date": "2024-04-10",
+        "cid": 20
+    },
+    {
+        "id": 12,
+        "title": "Investment Return",
+        "price": 500,
+        "date": "2024-02-15",
+        "cid": 12
+    },
+    {
+        "id": 13,
+        "title": "Part-time Tutoring",
+        "price": 300,
+        "date": "2024-04-20",
+        "cid": 11
     }
-]
+];

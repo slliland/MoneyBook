@@ -56,7 +56,7 @@ class MonthPicker extends React.Component {
 
         return (
             <div className="month-picker-component" ref={this.dropdownRef}>
-                <h4>Select Month</h4>
+                <h4>Select Date</h4>
                 <div className="btn-group" style={{ display: 'block' }}>
                     <button
                     className="btn btn-primary dropdown-toggle"

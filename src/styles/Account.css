@@ -1,0 +1,40 @@
+.account-page {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .account-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .account-info {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .account-info p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #555;
+  }
+  
+  .edit-account-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .edit-account-btn:hover {
+    background-color: #0056b3;
+  }
+  
