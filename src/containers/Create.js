@@ -18,7 +18,8 @@ class Create extends React.Component {
     const { id } = this.props.params;  // Access params using props.params
     const { items, categories } = this.props.data;
     
-    const editItem = (id && items.find(item => item.id === Number(id))) || null; // Ensure you find the item by id
+    // Search for the item in the object instead of using `find`
+    const editItem = id && items[id] ? items[id] : null; // Access the item directly by ID
 
     this.state = {
       selectedTab: editItem ? categories[editItem.cid].type : TYPE_OUTCOME,  // Set based on item type if editing
@@ -26,6 +27,21 @@ class Create extends React.Component {
       categoryError: false,  // Track if the category validation fails
       editItem  // Store the item to be edited
     };
+  }
+
+  componentDidMount() { 
+    const {id} = this.props.params;
+    this.props.actions.getInitialData();  // Fetch initial data
+    if (id) {
+      this.props.actions.getEditData(id).then(data => {
+        const { editItem, categories } = data;
+        this.setState({
+          selectedTab: categories[editItem.cid].type,
+          selectedCategoryId: editItem.cid,
+          editItem
+        });
+      });
+    }
   }
 
   handleTabChange = (index) => {
@@ -80,6 +96,9 @@ class Create extends React.Component {
       .filter(cid => categories[cid].type === selectedTab)
       .map(cid => categories[cid]);
 
+    // Find the selected category from the categories list using the selectedCategoryId
+    const selectedCategory = categories[selectedCategoryId];
+
     return (
       <div className="create-page container mt-5 py-4 px-3 rounded">
         <h2 className="text-center mb-4">{id ? "Edit Record" : "Create a New Record"}</h2>
@@ -88,11 +107,11 @@ class Create extends React.Component {
           <Tab>Outcome</Tab>
         </Tabs>
 
-        {/* Pass filtered categories to CategorySelect */}
+        {/* Pass selectedCategoryId and categories to CategorySelect */}
         <CategorySelect
           categories={filteredCategories}
           onSelectCategory={this.handleCategorySelect}
-          selectedCategory={categories[selectedCategoryId]}
+          selectedCategory={selectedCategory}  // Pass selectedCategory
         />
 
         {/* Show error message if no category is selected */}

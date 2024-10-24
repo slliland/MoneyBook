@@ -9,16 +9,22 @@ import { Tabs, Tab } from '../components/Tabs';
 import "../styles/Home.css";
 import withNavigate from '../withNavigate';
 import WithContext from '../WithContext';
-import { parseToYearAndMonth } from '../utility';
+import Loader from  '../components/Loader';
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentDate: parseToYearAndMonth(),
       tabView: LIST_VIEW,
     };
   }
+
+  componentDidMount() {
+    this.props.actions.getInitialData().then(items => {
+      console.log('Home component:', items);
+    }
+    );
+  };
 
   scrollToContent = () => {
     const contentArea = document.querySelector('.content-area');
@@ -33,7 +39,7 @@ class Home extends React.Component {
   };
 
   changeDate = (year, month) => {
-    this.setState({ currentDate: { year, month } });
+    this.props.actions.selectNewMonth(year, month);
   };
 
   modifyItem = (item) => {
@@ -41,7 +47,7 @@ class Home extends React.Component {
   };
 
   deleteItem = (deletedItem) => {
-    this.props.actions.deleteItem(deletedItem); // Use the deleteItem action from context
+    this.props.actions.deleteItem(deletedItem); 
   };
 
   createItem = () => {
@@ -49,18 +55,16 @@ class Home extends React.Component {
   };
 
   render() {
-    const { data } = this.props; // Get data from context
-    const { items = [], categories } = data;
-    const { currentDate, tabView } = this.state;
+    const { items, categories, currentDate, isLoading } = this.props.data;
+    const { tabView } = this.state;
 
     let totalIncome = 0, totalOutcome = 0;
 
-    const itemsWithCategory = items
+    const itemsWithCategory = Object.values(items) // Convert object to array
       .map(item => ({
         ...item,
         category: categories[item.cid],
       }))
-      .filter(item => item.date.includes(`${currentDate.year}-${padLeft(currentDate.month)}`));
 
     itemsWithCategory.forEach(item => {
       if (item.category.type === 'income') {
@@ -69,6 +73,8 @@ class Home extends React.Component {
         totalOutcome += item.price;
       }
     });
+
+    const hasNoData = itemsWithCategory.length === 0;
 
     return (
       <React.Fragment>
@@ -93,25 +99,44 @@ class Home extends React.Component {
           </div>
         </div>
         <div className="content-area py-3 px-3">
-          <Tabs activeIndex={0} onTabChange={this.changeView}>
-            <Tab>
-              <Ionicon className="rounded-circle" fontSize="25px" color={'#007bff'} icon='ios-paper' />
-              List
-            </Tab>
-            <Tab>
-              <Ionicon className="rounded-circle" fontSize="25px" color={'#007bff'} icon='ios-pie' />
-              Chart
-            </Tab>
-          </Tabs>
-          <CreateBtn className="create-btn" onClick={this.createItem} />
-          {tabView === LIST_VIEW && (
-            <PriceList
-              items={itemsWithCategory}
-              onModifyItem={this.modifyItem}
-              onDeleteItem={this.deleteItem}
-            />
-          )}
-          {tabView === CHART_VIEW && <h1>Chart</h1>}
+          {isLoading && <Loader />}
+          {!isLoading &&
+          <React.Fragment>
+            <Tabs activeIndex={0} onTabChange={this.changeView}>
+              <Tab>
+                <Ionicon className="rounded-circle" fontSize="25px" color={'#007bff'} icon='ios-paper' />
+                List
+              </Tab>
+              <Tab>
+                <Ionicon className="rounded-circle" fontSize="25px" color={'#007bff'} icon='ios-pie' />
+                Chart
+              </Tab>
+            </Tabs>
+            <CreateBtn className="create-btn" onClick={this.createItem} />
+            {tabView === LIST_VIEW && (
+              hasNoData ? (
+                <div className="no-data-message">
+                  No data available for this period, start recording your expenses now.
+                </div>
+              ) : (
+                <PriceList
+                  items={itemsWithCategory}
+                  onModifyItem={this.modifyItem}
+                  onDeleteItem={this.deleteItem}
+                />
+              )
+            )}
+            {tabView === CHART_VIEW && (
+              hasNoData ? (
+                <div className="no-data-message">
+                  No chart data available for this period, start recording your expenses now.
+                </div>
+              ) : (
+                <h1>Chart</h1>
+              )
+            )}
+          </React.Fragment>
+          }
         </div>
       </React.Fragment>
     );
