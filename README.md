@@ -2,7 +2,7 @@
 
 Money Book is a web-based financial management tool designed for tracking expenses, managing budgets, and providing insights into personal finance. The project is built for macOS Sierra 10.12.6 or later, and supports Chrome 68 or higher. Other operating systems and browsers are yet to be tested.
 
-![Demostrate Cover](./src/cover.png)
+![Demostrate Cover](./src/cover1.png)
 
 ## Prerequisites
 
