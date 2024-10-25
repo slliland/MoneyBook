@@ -41,7 +41,7 @@ class App extends React.Component {
           categories: Array.isArray(categories.data) ? flatternArr(categories.data) : flatternObj(categories.data),
           isLoading: false,
         });
-        return items;
+        return { items, categories };
       }),
 
       getEditData: withLoading(async (id) => {
