@@ -5,25 +5,26 @@ const fs = require('fs');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Load db.json data into memory
+// Load db.json data into memory at server start
 const dbData = JSON.parse(fs.readFileSync(path.join(__dirname, 'db.json'), 'utf-8'));
 
-// Serve the static React build files
+// Serve static files from React's build directory
 const root = path.join(__dirname, 'build');
 app.use(express.static(root, { maxAge: 86400000 }));
 
-// Define in-memory routes to serve data directly
+// API route to get items based on monthCategory query
 app.get('/api/items', (req, res) => {
   const monthCategory = req.query.monthCategory;
   const filteredItems = dbData.items.filter(item => item.monthCategory === monthCategory);
   res.json(filteredItems);
 });
 
+// API route to get all categories
 app.get('/api/categories', (req, res) => {
   res.json(dbData.categories);
 });
 
-// Catch-all to serve React app for all other routes
+// Catch-all route to serve React app for other paths
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(root, 'index.html'));
 });
