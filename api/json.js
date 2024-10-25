@@ -1,16 +1,8 @@
-import { createServer } from 'http';
-import { parse } from 'url';
-import jsonServer from 'json-server';
-import path from 'path';
+const express = require("express");
+const app = express();
 
-const server = jsonServer.create();
-const router = jsonServer.router(path.join(process.cwd(), 'db.json'));
-const middlewares = jsonServer.defaults();
+app.get("/", (req, res) => res.send("Express on Vercel"));
 
-server.use(middlewares);
-server.use('/api', router);
+app.listen(3000, () => console.log("Server ready on port 3000."));
 
-export default function handler(req, res) {
-  const parsedUrl = parse(req.url, true);
-  server.handle(req, res, parsedUrl);
-}
+module.exports = app;
