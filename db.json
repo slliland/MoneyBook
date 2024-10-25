@@ -128,79 +128,79 @@
       "price": 200,
       "date": "2024-03-15",
       "cid": 1,
-      "timestamp": 1710460800,
+      "timestamp": 1710460800000,
       "monthCategory": "2024-03"
     },
     {
       "id": "_149201",
-      "title": "Buy a T-shirt",
+      "title": "Sell a T-shirt",
       "price": 10,
-      "date": "2024-10-25",
-      "cid": 3,
-      "timestamp": 1729814400,
+      "date": "2024-10-17",
+      "cid": "19",
+      "timestamp": 1729123200000,
       "monthCategory": "2024-10"
     },
     {
       "id": "_532731",
       "title": "Eat at McDonald's",
       "price": 20,
-      "date": "2024-05-02",
+      "date": "2024-05-01",
       "cid": 2,
-      "timestamp": 1714608000,
+      "timestamp": 1714521600000,
       "monthCategory": "2024-05"
     },
     {
       "id": "_248795",
       "title": "Buy a phone",
       "price": 500,
-      "date": "2024-05-02",
+      "date": "2024-05-18",
       "cid": 9,
-      "timestamp": 1714608000,
+      "timestamp": 1715990400000,
       "monthCategory": "2024-05"
     },
     {
       "id": "_250669",
       "title": "Buy a house",
       "price": 50000,
-      "date": "2024-05-02",
+      "date": "2024-05-15",
       "cid": 4,
-      "timestamp": 1714608000,
+      "timestamp": 1715731200000,
       "monthCategory": "2024-05"
     },
     {
       "id": "_411558",
       "title": "Buy a car",
       "price": 20000,
-      "date": "2024-05-02",
+      "date": "2024-05-22",
       "cid": 4,
-      "timestamp": 1714608000,
+      "timestamp": 1716336000000,
       "monthCategory": "2024-05"
     },
     {
       "id": "_009782",
       "title": "Buy a computer",
       "price": 1000,
-      "date": "2024-05-02",
+      "date": "2024-05-30",
       "cid": 6,
-      "timestamp": 1714608000,
+      "timestamp": 1717027200000,
       "monthCategory": "2024-05"
     },
     {
       "id": "_883777",
       "title": "Freelance Work",
       "price": 1500,
-      "date": "2024-04-15",
+      "date": "2024-04-30",
       "cid": 13,
-      "timestamp": 1713139200,
+      "timestamp": 1714435200000,
       "monthCategory": "2024-04"
     },
     {
       "id": "_719431",
       "title": "Salary for March",
       "price": 4000,
-      "date": "2024-03-31",
+      "date": "2024-03-27",
       "cid": 10,
-      "timestamp": 1711843200,
+      "timestamp": 1711497600000,
       "monthCategory": "2024-03"
     },
     {
@@ -209,7 +209,7 @@
       "price": 800,
       "date": "2024-04-10",
       "cid": 20,
-      "timestamp": 1712707200,
+      "timestamp": 1712707200000,
       "monthCategory": "2024-04"
     },
     {
@@ -218,368 +218,26 @@
       "price": 500,
       "date": "2024-02-15",
       "cid": 12,
-      "timestamp": 1707955200,
+      "timestamp": 1707955200000,
       "monthCategory": "2024-02"
     },
     {
       "id": "_648304",
       "title": "Part-time Tutoring",
       "price": 300,
-      "date": "2024-04-20",
+      "date": "2024-04-23",
       "cid": 11,
-      "timestamp": 1713571200,
+      "timestamp": 1713830400000,
       "monthCategory": "2024-04"
     },
     {
-      "id": "_712431",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_u7ws2qidro",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_6r18gvnya8",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_ddajxwhneu",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_q9qjcwugau",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_nnbd1fqsw5",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_na96ha2hth",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_1z0z7to8tn",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_mx16ck7ot8",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_yzoytj0pb8",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_notutmfrms",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_rtxc2gk8zj",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_78euuh4biy",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_qyl5v2k5jb",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_1ooufgc24v",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_ts6oofan4z",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_xt6bx5lakp",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_wt3qipqxkg",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_4z5k9anfm4",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_0mavaoxv1i",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_3p6lgyol6g",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_gwjknf4an4",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_slk5j1em1a",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_hmt6c25vnt",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_ggn2gf6bjx",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_a213ygncg7",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_9djsw1kog5",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_r8qdbnkhcw",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_hst8dkww4t",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_rn16mxj2lp",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_00dgsi7osw",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_f7bw1f0f7c",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_e48p6btefq",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_eonzp1cd0c",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_zbosfegqbx",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_8wxd374kbj",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_hdgx72al6n",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_2ethv5xy0y",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
-    },
-    {
-      "id": "_mqkrdd9vam",
-      "title": "Hello, World!",
-      "price": 100,
-      "date": "2020-12-20",
-      "cid": "1",
-      "timestamp": 1711822200,
-      "monthCategory": "2024-12"
+      "title": "Eat at Wawa",
+      "price": 15,
+      "date": "2024-11-28",
+      "monthCategory": "2024-11",
+      "timestamp": 1732752000000,
+      "id": "_ri1fletkjo",
+      "cid": "2"
     }
   ]
 }

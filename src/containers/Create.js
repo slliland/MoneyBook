@@ -15,30 +15,36 @@ class Create extends React.Component {
   constructor(props) {
     super(props);
     
-    const { id } = this.props.params;  // Access params using props.params
+    const { id } = this.props.params;
     const { items, categories } = this.props.data;
     
-    // Search for the item in the object instead of using `find`
-    const editItem = id && items[id] ? items[id] : null; // Access the item directly by ID
+    // Safely access editItem and categories
+    const editItem = id && items[id] ? items[id] : null;
+    const selectedTab = editItem && categories[editItem.cid] ? categories[editItem.cid].type : TYPE_OUTCOME;
 
     this.state = {
-      selectedTab: editItem ? categories[editItem.cid].type : TYPE_OUTCOME,  // Set based on item type if editing
-      selectedCategoryId: editItem ? editItem.cid : null,  // Set category based on the item if editing
-      categoryError: false,  // Track if the category validation fails
-      editItem  // Store the item to be edited
+      selectedTab,  // Set based on item type if editing
+      selectedCategoryId: editItem ? editItem.cid : null,
+      categoryError: false,
+      editItem,
     };
   }
 
   componentDidMount() { 
-    const {id} = this.props.params;
+    const { id } = this.props.params;
     this.props.actions.getInitialData();  // Fetch initial data
     if (id) {
       this.props.actions.getEditData(id).then(data => {
         const { editItem, categories } = data;
+
+        // Safely check if editItem and categories[editItem.cid] exist
+        const selectedTab = editItem && categories[editItem.cid] ? categories[editItem.cid].type : TYPE_OUTCOME;
+        const selectedCategoryId = editItem ? editItem.cid : null;
+
         this.setState({
-          selectedTab: categories[editItem.cid].type,
-          selectedCategoryId: editItem.cid,
-          editItem
+          selectedTab,
+          selectedCategoryId,
+          editItem,
         });
       });
     }
@@ -74,11 +80,13 @@ class Create extends React.Component {
 
     // Submit form if category is selected
     if (!isEditMode) {
-      this.props.actions.createItem(data, selectedCategoryId);
-      this.props.navigate('/');
+      this.props.actions.createItem(data, selectedCategoryId).then(() => {
+        this.props.navigate('/');
+      });
     } else {
-      this.props.actions.updateItem(data, selectedCategoryId);  // Call update for editing
-      this.props.navigate('/');
+      this.props.actions.updateItem(data, selectedCategoryId).then(() => {
+        this.props.navigate('/');
+      });
     }
   }
 
@@ -86,14 +94,14 @@ class Create extends React.Component {
     const { data } = this.props;
     const { categories } = data;
     const { selectedTab, selectedCategoryId, categoryError, editItem } = this.state;
-    const { id } = this.props.params;  // Access params using props.params
+    const { id } = this.props.params;
 
     // Determine the active index for the Tabs component
     const activeIndex = tabsText.findIndex(text => text === selectedTab);
 
     // Filter categories by income or outcome based on the selected tab
     const filteredCategories = Object.keys(categories)
-      .filter(cid => categories[cid].type === selectedTab)
+      .filter(cid => categories[cid]?.type === selectedTab)  // Safely access `categories[cid]`
       .map(cid => categories[cid]);
 
     // Find the selected category from the categories list using the selectedCategoryId

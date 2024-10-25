@@ -3,11 +3,10 @@ import Ionicon from 'react-ionicons';
 import PropTypes from 'prop-types';
 
 // Define the PriceList component
-const PriceList = ({ items, onModifyItem, onDeleteItem }) => {
+const PriceList = ({ items, onModifyItem = () => {}, onDeleteItem = () => {} }) => {
     return (
         <ul className="list-group list-group-flush">
             {
-                // Loop through the items array and render each item as a list item
                 items.map(item => (
                     <li className="list-group-item d-flex justify-content-between align-items-center" key={item.id}>
                         <span className="col-1">
@@ -49,6 +48,7 @@ const PriceList = ({ items, onModifyItem, onDeleteItem }) => {
         </ul>
     );
 }
+
 
 PriceList.propTypes = {
     items: PropTypes.array.isRequired,
