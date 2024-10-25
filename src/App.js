@@ -32,8 +32,8 @@ class App extends React.Component {
     this.actions = {
       getInitialData: withLoading(async () => {
         const { currentDate } = this.state;
-        const getUrlWithData = `/items?monthCategory=${currentDate.year}-${padLeft(currentDate.month)}&_sort=timestamp&_order=desc`;
-        const results = await Promise.all([axios.get('/categories'), axios.get(getUrlWithData)]);
+        const getUrlWithData = `/api/items?monthCategory=${currentDate.year}-${padLeft(currentDate.month)}&_sort=timestamp&_order=desc`;
+        const results = await Promise.all([axios.get('/api/categories'), axios.get(getUrlWithData)]);
         const [categories, items] = results;
 
         this.setState({
@@ -49,12 +49,12 @@ class App extends React.Component {
         let promiseArr = [];
 
         if (Object.keys(categories).length === 0) {
-          promiseArr.push(axios.get('/categories'));
+          promiseArr.push(axios.get('/api/categories'));
         }
 
         const itemAlreadyFetched = Object.keys(items).indexOf(id) > -1;
         if (id && !itemAlreadyFetched) {
-          const getUrlWithData = `/items/${id}`;
+          const getUrlWithData = `/api/items/${id}`;
           promiseArr.push(axios.get(getUrlWithData));
         }
 
@@ -83,7 +83,7 @@ class App extends React.Component {
       }),
 
       selectNewMonth: withLoading(async (year, month) => {
-        const getUrlWithData = `/items?monthCategory=${year}-${padLeft(month)}&_sort=timestamp&_order=desc`;
+        const getUrlWithData = `/api/items?monthCategory=${year}-${padLeft(month)}&_sort=timestamp&_order=desc`;
         const items = await axios.get(getUrlWithData);
         this.setState({
           items: flatternArr(items.data),
@@ -93,7 +93,7 @@ class App extends React.Component {
         return items;
       }),
       deleteItem: withLoading(async (item) => {
-        const deleteItem = await axios.delete(`/items/${item.id}`);
+        const deleteItem = await axios.delete(`/api/items/${item.id}`);
         const updatedItems = { ...this.state.items };
         delete updatedItems[item.id];
         this.setState({
@@ -108,7 +108,7 @@ class App extends React.Component {
         const { year, month } = parseToYearAndMonth(data.date);
         data.monthCategory = `${year}-${month}`;
         data.timestamp = new Date(data.date).getTime();
-        const newItem = await axios.post('/items', { ...data, id: newId, cid: categoryId });
+        const newItem = await axios.post('/api/items', { ...data, id: newId, cid: categoryId });
         this.setState({
           items: { ...this.state.items, [newId]: newItem.data },
           isLoading: false,
@@ -133,7 +133,7 @@ class App extends React.Component {
           monthCategory: `${year}-${month}`
         };
 
-        const updatedItem = await axios.put(`/items/${item.id}`, updatedData);
+        const updatedItem = await axios.put(`/api/items/${item.id}`, updatedData);
 
         this.setState({
           items: { ...this.state.items, [updatedItem.data.id]: updatedItem.data },
@@ -163,7 +163,6 @@ class App extends React.Component {
               </Nav>
             </Navbar.Collapse>
           </Navbar>
-
 
           <div className="App">
             <Routes>
